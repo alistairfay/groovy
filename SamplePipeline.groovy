@@ -11,7 +11,7 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Running..'
-                sh 'hello-world.sh'
+                sh './hello-world.sh'
             }
         }
     }
