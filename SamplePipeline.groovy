@@ -5,16 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/alistairfay/groovy.git']]])
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo 'Running..'
+                sh 'hello-world.sh'
             }
         }
     }
