@@ -11,8 +11,8 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Running..'
-                sh 'chmod 700 hello-world.sh
-                ./hello-world.sh'
+                sh '''chmod 700 hello-world.sh
+                ./hello-world.sh'''
             }
         }
     }
